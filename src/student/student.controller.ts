@@ -24,7 +24,10 @@ export class StudentController {
     }
 
     @Put('/:id')
-    updateStudent() {
-        return "Update Student"
+    updateStudent(
+        @Param('id') id,
+        @Body() body
+    ) {
+        return {body, id}
     }
 }
