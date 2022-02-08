@@ -14,10 +14,9 @@ export class StudentController {
 
     @Get('/:id')
     getStudentById(
-        @Param('id') params: { id: string }
+        @Param('id') id: string
     ): FindStudentsResponseDto {
-        console.log(params)
-        return null
+        return this.studentService.getStudentById(id)
     }
 
     @Post()
